@@ -1,3 +1,71 @@
-﻿test_path,issue,title
-tests/v1/distributed/test_async_llm_dp.py,12942,[Bug][Upstream]: ray related case failed: tests/v1/distributed/test_async_llm_dp.py
-tests/transformers_utils/test_processor.py,20992,[Bug][Upstream]: processor local snapshot case failed: tests/transformers_utils/test_processor.py
+﻿test_path,issue,notes,title
+tests/v1/distributed/test_async_llm_dp.py,12942,,[Bug][Upstream]: ray related case failed: tests/v1/distributed/test_async_llm_dp.py
+tests/transformers_utils/test_processor.py,20992,,[Bug][Upstream]: processor local snapshot case failed: tests/transformers_utils/test_processor.py
+tests/models/language/pooling/test_colbert.py,8494,,"[Bug][Upstream]: The process exits for this inner error, and the current working operator name is RopeOperation"
+tests/entrypoints/weight_transfer/test_weight_transfer_llm.py,8500,,[Bug][Upstream]: AttributeError: 'NPUWorker' object has no attribute 'weight_transfer_engine'
+tests/v1/kv_connector/extract_hidden_states_integration/test_extraction.py,8513,,[Bug][Upstream]: ValueError: Unknown speculative decoding method: extract_hidden_states
+tests/v1/worker/test_utils.py,8517,,[Bug][Upstream]: assert tensor([0.]) is tensor([0.])
+tests/entrypoints/openai/tool_parsers/test_granite4_tool_parser.py,8528,,[Bug][Upstream]: TypeError: causal_conv1d_fn() got an unexpected keyword argument 'block_idx_first_scheduled_token'
+tests/models/language/pooling_mteb_test/test_gte.py,9751,,[Bug][Upstream]: gte accuracy test failed
+tests/models/multimodal/generation/test_granite_speech.py,9752,,[Bug][Upstream]: granite_speech accuracy test failed
+tests/models/language/generation/test_hybrid.py,9759,,[Bug][Upstream]: or use mamba should be added
+tests/v1/spec_decode/test_speculators_eagle3.py,9762,,[Bug][Upstream]: AscendW4A16FusedMoEMethod.get_weight() lack params_dtype
+tests/entrypoints/openai/completion/test_tensorizer_entrypoint.py,9764,,[Bug][Upstream]: Exception: Call to collective_rpc method failed: Method 'save_tensorized_model' is not implemented
+tests/compile/h100/test_startup.py,9766,,[Bug][Upstream]: AssertionError: Cold-start child failed
+tests/test_logger.py,10358,,[Bug][Upstream]: Some log related errors happend on upstream cases
+tests/utils_/test_argparse_utils.py,10358,,[Bug][Upstream]: Some log related errors happend on upstream cases
+tests/v1/spec_decode/test_speculators_correctness.py,11610,,[Bug][Upstream]: TypeError: AscendFp8Config.__init__() missing 2 required positional arguments: 'ignore' and 'quant_format'
+tests/entrypoints/speech_to_text/realtime/test_realtime_validation.py,11622,,[Bug][Upstream]: NotImplementedError: <class 'vllm_ascend.attention.attention_v1.AscendAttentionBackend'> is not yet supported
+tests/entrypoints/speech_to_text/transcription/test_transcription_validation.py,11627,,"[Bug][Upstream]: RuntimeError: cos_:../third_party/op-plugin/op_plugin/ops/opapi/StructKernelNpuOpApi.cpp:1005 NPU function error: call aclnnInplaceCos failed, error code is 161002"
+tests/model_executor/test_eagle_quantization.py,11658,,[Bug][Upstream]: TypeError: argument of type 'Mock' is not iterable
+tests/models/multimodal/pooling/test_siglip.py,11675,,"[Bug][Upstream]: RuntimeError: npu_fused_infer_attention_score_symint:../third_party/op-plugin/op_plugin/ops/opapi/FusedInferAttentionScoreKernelNpuOpApi.cpp:425 NPU function error: call aclnnFusedInferAttentionScoreV3 failed, error code is 161002"
+tests/v1/core/test_scheduler.py,12061,,[Bug][Upstream]: AssertionError: assert '0' in {}
+tests/model_executor/test_mistral_large_3_eagle.py,12608,,[Bug][Upstream]: AssertionError: pipeline model parallel group is not initialized
+tests/models/multimodal/generation/test_moss_audio.py,12623,,"[Bug][Upstream]: RuntimeError: npu_fusion_attention_v3_symint:../third_party/op-plugin/op_plugin/ops/opapi/FlashAttentionKernelNpuOpApi.cpp:2073 NPU function error: call aclnnFlashAttentionScore failed, error code is 161001"
+tests/config/test_bailing_mtp_config.py,12626,,[Bug][Upstream]: AssertionError: assert 'bailing_hybrid' == 'bailing_hybrid_mtp'
+tests/v1/core/test_contiguous_kv_packing.py,12627,,[Bug][Upstream]: assert t.block_stride > 0  AssertionError: assert 0 > 0
+tests/v1/core/test_kv_cache_utils.py,13254,,[Bug][Upstream]: assert group_and_unify_kv_cache_specs(specs) is None
+tests/config/test_speculative_draft_hf_overrides.py,13256,,[Bug][Upstream]: tests/config/test_speculative_draft_hf_overrides.py:107: AssertionError  assert out is text_config
+tests/v1/kv_connector/unit/test_mooncake_store_worker.py,13258,,[Bug][Upstream]: assert False   E        +  where False = any(<generator object test_recv_thread_logs_tier_summary_when_enabled.<locals>.<genexpr> at 0xfffb937cb2a0>)
+tests/parser/test_streaming.py,13260,,"[Bug][Upstream]: assert '[{""name"": ""g...: ""Dallas""}}]' == ''"
+tests/renderers/test_sparse_tensor_concurrent_race.py,13434,,[Bug][Upstream]: _pickle.UnpicklingError: Weights only load failed.
+tests/v1/test_outputs.py,16519,,"[Bug]: assert [0, 1, 2] == [0, 2, 4]"
+tests/model_executor/test_qwen3_omni.py,17800,,[Bug][Upstream]: DSpark same-checkpoint quant patch breaks an upstream embedding-sharing test that has no model path
+tests/v1/kv_connector/unit/test_nixl_simple_cpu_offload.py,17831,,[Bug][Upstream]: AttributeError: 'AscendHybridKVCacheCoordinator' object has no attribute 'group_block_sizes'
+tests/v1/core/test_prefix_caching.py,20099,,[Bug][Upstream]: AssertionError  assert self.host_manager is not None
+tests/lora/test_qwenvl.py,20098,,"[Bug][Upstream]: RuntimeError: copy_between_host_and_device_opapi:../torch_npu/csrc/aten/ops/op_api/CopyKernelOpApi.cpp:57 NPU function error: SUSPECT REMOTE ERROR, error code is 507057"
+tests/entrypoints/openai/responses/test_stateful.py,20095,,[Bug][Upstream]:AssertionError: assert 'queued' == 'completed'
+tests/entrypoints/serve/instrumentator/test_metrics.py,20181,,[Bug][Upstream]: AssertionError: vllm:iteration_tokens_total_sum expected value of 200 did not match found value 184.0
+tests/utils_/test_spawn_decorator.py,20212,,"[Bug][Upstream]: AssertionError: assert {'passed': 0,...rors': 1, ...} == {'passed': 0,...rors': 0, ...}"
+tests/v1/core/test_kv_cache_utils.py,20214,,"[Bug][Upstream]: assert [1, 1] == [1, 4]"
+tests/v1/core/test_scheduler.py,20216,,[Bug][Upstream]:  coordinator = _bind_hisparse_connector(scheduler)
+tests/v1/test_outputs.py,20218,,"[Bug][Upstream]: assert 0 == 512   E        +  where 512 = min(512, 2048)"
+tests/detokenizer/test_stop_reason.py,20220,,[Bug][Upstream]: AssertionError: assert 'length' == 'stop'   E                E             - stop   E             + length
+tests/v1/core/test_single_type_kv_cache_manager.py,20221,,[Bug][Upstream]: assert admission_estimate == allocation_estimate == allocated   E       assert 3 == 2
+tests/v1/kv_connector/unit/test_remote_prefill_lifecycle.py,21609,,[Bug][Upstream]: Mamba spec block double reserve case failed: tests/v1/kv_connector/unit/test_remote_prefill_lifecycle.py
+tests/parser/mistral/test_tool_calls.py,21610,,[Bug][Upstream]: Mistral tool call parser grammar factory case failed: tests/parser/mistral/test_tool_calls.py
+tests/v1/e2e/spec_decode/acceptance_rates/mtp_other/test_medusa.py,21611,,[Bug][Upstream]: Medusa acceptance rate case failed: tests/v1/e2e/spec_decode/acceptance_rates/mtp_other/test_medusa.py
+tests/models/test_terratorch.py,21612,,[Bug][Upstream]: Terratorch Prithvi inference case failed: tests/models/test_terratorch.py
+tests/v1/spec_decode/test_dflash2.py,21613,,[Bug][Upstream]: DFlash2 spec decode case failed: tests/v1/spec_decode/test_dflash2.py
+tests/v1/logits_processors/test_custom_online.py,21614,,[Bug][Upstream]: Custom logits processor online case failed: tests/v1/logits_processors/test_custom_online.py
+tests/entrypoints/openai/chat_completion/test_chat_echo.py,21615,,[Bug][Upstream]: Chat echo logprobs case failed: tests/entrypoints/openai/chat_completion/test_chat_echo.py
+tests/parser/mistral/test_reasoning.py,21616,,[Bug][Upstream]: Mistral reasoning parser case failed: tests/parser/mistral/test_reasoning.py
+tests/tokenizers_/test_mistral.py,21617,,[Bug][Upstream]: Mistral tokenizer request validation case failed: tests/tokenizers_/test_mistral.py
+tests/evals/mrcr/test_mrcr_correctness.py,21618,,[Bug][Upstream]: MRCR correctness case failed: tests/evals/mrcr/test_mrcr_correctness.py
+tests/model_executor/test_routed_experts_capture.py,21619,,[Bug][Upstream]: Routed experts capture case failed: tests/model_executor/test_routed_experts_capture.py
+tests/v1/kv_connector/unit/test_mooncake_store_worker.py,21620,,[Bug][Upstream]: Mooncake store worker hash block size case failed: tests/v1/kv_connector/unit/test_mooncake_store_worker.py
+tests/basic_correctness/cpu_offload/test_cpu_offload.py,21964,5 failed 3 passed。上游 UVAOffloader 调用 vllm/utils/torch_utils.py:920 的 accelerator view 接口，该接口只有 XPU/CUDA 分支，NPU 直接 raise；vllm-ascend 未提供等价实现，而该特性依赖 UVA 统一虚拟寻址，NPU 无对应能力，属 vllm-ascend 未适配的能力缺口（需另做 offlo,[Bug][Upstream]: test_cpu_offload case failed: tests/basic_correctness/cpu_offload/test_cpu_offload.py
+tests/config/test_aux_output_config.py,21965,1 failed 73 passed。上游 config/vllm.py:1144 对 out-of-tree 平台（含 NPU）显式豁免 MRV2 检查，要求平台自行校验 AuxOutput；vllm-ascend 未实现该平台侧校验，所以 use_v2=False 时未抛 ValueError。属 vllm-ascend 适配缺口（纯 Python 可补）。,[Bug][Upstream]: test_aux_output_config case failed: tests/config/test_aux_output_config.py
+tests/distributed/test_flashinfer_pcie_ipc_all_reduce.py,21966,1 failed 7 passed。vllm_ascend/patch/worker/patch_distributed.py:223 destroy() 访问 self.backend，但 GroupCoordinatorPatch 未定义该属性（上游新增 backend 字段未同步），属 vllm-ascend 补丁代码缺陷。,[Bug][Upstream]: test_flashinfer_pcie_ipc_all_reduce case failed: tests/distributed/test_flashinfer_pcie_ipc_all_reduce.py
+tests/entrypoints/rl/state_transitions/test_pause_resume.py,21967,2 failed 10 passed。MRV1-wait 与 MRV2-wait 的 /pause 在 15s 内无响应，同文件 abort/keep 模式通过，说明 wait 语义（等待在飞请求完成后暂停）在 Ascend 服务端未正确实现或阻塞，属 vllm-ascend 服务端状态机问题。,[Bug][Upstream]: test_pause_resume case failed: tests/entrypoints/rl/state_transitions/test_pause_resume.py
+tests/entrypoints/rl/state_transitions/test_weight_checker.py,21968,2 failed 5 passed 3 skipped。checksum/reset 两个用例调用 /weight_checker 均返回 500，客户端日志无服务端栈。RL weight_checker 端点在 Ascend 服务端实现有缺陷（前次同版本复现一致）。,[Bug][Upstream]: test_weight_checker case failed: tests/entrypoints/rl/state_transitions/test_weight_checker.py
+tests/entrypoints/rl/weight_transfer/test_offline.py,21969,3 failed 2 passed。上游在 gpu_worker.py:1498 实现 shutdown_weight_transfer_engine，NPUWorker 继承 WorkerBase 未实现；且 vllm-ascend 默认开启 FRACTAL_NZ 并对 RL 场景主动 raise，要求 weight_nz_mode=0 或 rl_config，与上游用例默认配置冲突。均属 vl,[Bug][Upstream]: test_offline case failed: tests/entrypoints/rl/weight_transfer/test_offline.py
+tests/kernels/moe/test_fp8_tp_loading.py,21970,2 failed 22 passed 6 skipped。NPU 上 tp_shard_with_padding=True，intermediate_size_per_partition 从 160 pad 到 256（tp=2 时 320→384），与上游精确切分期望不符。属 vllm-ascend 为满足 NPU 对齐做的 padding 行为差异，需用例按 padding 断言或提供关闭开关,[Bug][Upstream]: test_fp8_tp_loading case failed: tests/kernels/moe/test_fp8_tp_loading.py
+tests/models/multimodal/generation_ppl_test/test_glm.py,21971,2 failed。显存充足（启动时空闲 29.05/29.49 GiB），非 OOM；GlmOcrForConditionalGeneration 在 NPU 上 PPL 与 HF 基准相差近一倍，属模型实现/数值精度问题。,[Bug][Upstream]: test_glm case failed: tests/models/multimodal/generation_ppl_test/test_glm.py
+tests/v1/e2e/spec_decode/mtp/gemma4/test_mtp.py,21972,1 failed。Gemma4 MTP 走到 PrefillNoCache 分支时 _get_fia_params 返回 key=None，随后 key[:num_tokens] 崩溃并抛 EngineDeadError，属 vllm-ascend attention 实现缺陷。,[Bug][Upstream]: test_mtp case failed: tests/v1/e2e/spec_decode/mtp/gemma4/test_mtp.py
+tests/v1/kv_connector/unit/test_hisparse_connector.py,21973,5 failed 10 passed。vllm_ascend/patch/platform/patch_kv_cache_coordinator.py:177 的 AscendHybridKVCacheCoordinator 构造 manager 时漏传 role，HISPARSE_SOURCE 组被建成 FullAttentionManager，未创建 HiSparseSourceManager,[Bug][Upstream]: test_hisparse_connector case failed: tests/v1/kv_connector/unit/test_hisparse_connector.py
+tests/v1/structured_output/test_structured_output_manager.py,21974,4 failed 50 passed 1 xfailed。outlines 后端 rollback 时 guide 只保存了 1 个状态；该用例脱离 vllm-ascend 全局 patch 单独运行可通过，启用 -p upstream_test_plugin 后复现，指向 vllm-ascend 的 structured_output/outlines 适配 patch，待进一步定位到具体 pa,[Bug][Upstream]: test_structured_output_manager case failed: tests/v1/structured_output/test_structured_output_manager.py
+tests/v1/worker/test_gpu_model_runner_prefill_tail_classification.py,21975,2 errors。上游把 model runner 构造抽成 GPUWorker._make_model_runner 钩子（gpu_worker.py:563），NPUWorker 继承 WorkerBase 未同步实现，用例 setup 阶段即报错。属 vllm-ascend 未跟进上游 worker 重构，可直接补方法修复。,[Bug][Upstream]: test_gpu_model_runner_prefill_tail_classification case failed: tests/v1/worker/test_gpu_model_runner_prefill_tail_classification.py
+tests/config/test_kv_cache_dtype.py,21982,vLLM 0.33.0 引入 register_kv_cache_dtype() 注册机制，用例注册 test-c8 后 CacheConfig dtype 白名单 ValidationError 拒绝，vllm-ascend 未适配上游可扩展 kv-cache dtype 注册机制。,[Bug][Upstream]: CacheConfig dtype whitelist rejects custom registered dtype; vllm-ascend did not adapt upstream register_kv_cache_dtype() case failed: tests/config/test_kv_cache_dtype.py
+tests/v1/core/test_kv_cache_planning.py,21983,vllm-ascend 多处 patch 代码直接访问 hf_config.model_type 未做 getattr 防御（grep 确认 33+ 处），上游用例用 SimpleNamespace 模拟 config 对象时触发 AttributeError。,"[Bug][Upstream]: vllm-ascend patch code accesses hf_config.model_type without getattr, breaks tests using SimpleNamespace mock config case failed: tests/v1/core/test_kv_cache_planning.py"
+tests/v1/e2e/spec_decode/acceptance_rates/xpress/test_xpress.py,21984,NPU dflash backend 上 acceptance_rate=0.381 < 阈值 0.387（差 0.006 ≈1.5%），acceptance_len 6.716 vs 6.71；推理本身正常，疑似 dflash attention 在 NPU 上数值精度与 CUDA 有细微差异。,[Bug][Upstream]: XPress draft acceptance rate on NPU dflash backend is 0.381 vs threshold 0.387 (0.006 precision gap) case failed: tests/v1/e2e/spec_decode/acceptance_rates/xpress/test_xpress.py

@@ -1,0 +1,7 @@
+﻿test_path,issue,notes,title
+tests/lora/test_deepseekv2_tp.py,9756,已修复待CI确认,[Bug][Upstream]: ValueError: AscendUnquantizedFusedMoEMethod uses the new modular kernel initialization logic. This function should not be called
+tests/lora/test_qwen3moe_tp.py,9756,已修复待CI确认,[Bug][Upstream]: ValueError: AscendUnquantizedFusedMoEMethod uses the new modular kernel initialization logic. This function should not be called
+tests/lora/test_qwen3_with_multi_loras.py,11633,社区回复非问题,[Bug][Upstream]: AssertionError: assert 'GitHub is a ...rce software.' == 'GitHub is an...tomate tasks.
+tests/test_envs.py,11636,vllm问题,"[Bug][Upstream]: assert environment_variables[""VLLM_USE_PRECOMPILED""]() is False"
+tests/v1/engine/test_engine_args.py,11660,非问题，vllm-ascend无法实现，后端不支持,[Bug][Upstream]: NotImplementedError for get_device_total_memory
+tests/plugins_tests/gguf/test_gguf_plugin_generate.py,12618,后端不支持,[Bug][Upstream]: AttributeError: 'GGUFConfig' object has no attribute 'quant_description'
